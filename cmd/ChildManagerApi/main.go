@@ -1,4 +1,4 @@
-package main
+package childmanagerapi
 
 import "github.com/EtoNeAnanasbI95/ChildManagerApi/internal/config"
 
