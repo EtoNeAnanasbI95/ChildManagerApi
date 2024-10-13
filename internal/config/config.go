@@ -9,7 +9,7 @@ import (
 )
 
 type Config struct {
-	Port        string        `yaml:"port"         json:"port"         env-default:"8080"`
+	Port        string        `yaml:"port"         json:"port"         env-default:"8000"`
 	ReadTimeout time.Duration `yaml:"read_timeout" json:"read_timeout" env-default:"15s"`
 	IdleTimeout time.Duration `yaml:"idle_timeout" json:"idle_timeout" env-default:"30s"`
 }
