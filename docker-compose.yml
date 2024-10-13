@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  child-api:
+    build: ./
+    ports:
+      - "8000:8000"
+      - "39522:39522/udp"
