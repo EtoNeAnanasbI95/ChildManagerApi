@@ -13,5 +13,5 @@ jobs:
     steps:
       - name: Run test script
         run:
-          /root/test_deploy/deploy.sh
+         bash ~/test_deploy/deploy.sh
 
