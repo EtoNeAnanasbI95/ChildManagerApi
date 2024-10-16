@@ -1,4 +1,4 @@
-FROM golang:1.23 AS BUILDER
+FROM golang:1.23-alpine AS BUILDER
 
 WORKDIR /api
 
@@ -17,6 +17,7 @@ COPY --from=builder /api/new_client_correct_output.sh /new_client_correct_output
 
 RUN chmod a+x /new_client_awg.sh
 RUN chmod a+x /new_client_correct_output.sh
+RUN chmod a+x /ChildApi
 
 EXPOSE 8000
 EXPOSE 39522

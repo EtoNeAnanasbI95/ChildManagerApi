@@ -1,4 +1,4 @@
-package childmanagerapi
+package main
 
 //func init() {
 //	cmd := exec.Command(

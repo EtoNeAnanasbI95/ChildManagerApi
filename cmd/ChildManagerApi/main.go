@@ -1,8 +1,17 @@
-package childmanagerapi
+package main
 
-import "github.com/EtoNeAnanasbI95/ChildManagerApi/internal/config"
+import (
+	"fmt"
+	"time"
+)
 
 func main() {
-    cfg := config.MustLoadConfig()
-    _ = cfg
+	fmt.Println("Run api")
+	//cfg := config.MustLoadConfig()
+	//_ = cfg
+
+	for true {
+		fmt.Println("Running")
+		time.Sleep(1 * time.Second)
+	}
 }
