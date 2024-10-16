@@ -1,0 +1,17 @@
+name: test-deploy 
+
+on:
+  push:
+    branches:
+      - testingDeploying   # Запускается при пуше в ветку main
+  workflow_dispatch: 
+  
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Run test script
+        run:
+         bash ~/test_deploy/deploy.sh
+
