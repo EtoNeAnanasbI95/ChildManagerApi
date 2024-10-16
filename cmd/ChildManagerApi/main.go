@@ -11,7 +11,7 @@ func main() {
 	//_ = cfg
 
 	for true {
-		fmt.Println("Running")
+		fmt.Println("AHAHHAAHAHHH")
 		time.Sleep(1 * time.Second)
 	}
 }
