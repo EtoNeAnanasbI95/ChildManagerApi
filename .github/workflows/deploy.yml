@@ -3,7 +3,7 @@ name: test-deploy
 on:
   push:
     branches:
-      - testingDeploying   # Запускается при пуше в ветку main
+      - main
   workflow_dispatch: 
   
 jobs:

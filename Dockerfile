@@ -9,7 +9,7 @@ COPY ./ ./
 
 RUN go build -o ChildApi ./cmd/ChildManagerApi/main.go
 
-FROM amneziavpn/amnezia-wg
+FROM amneziavpn/amneziawg-go
 
 COPY --from=builder /api/ChildApi /ChildApi
 COPY --from=builder /api/new_client_awg.sh /new_client_awg.sh
