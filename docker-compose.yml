@@ -2,7 +2,7 @@ version: '3'
 
 services:
   child-api:
-    build: ./
+    image: thesearenotpineapples95/amneziawg-go-with-api
     ports:
       - "8000:8000"
       - "39522:39522/udp"
