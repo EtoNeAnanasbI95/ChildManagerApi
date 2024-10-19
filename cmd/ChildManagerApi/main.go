@@ -5,6 +5,7 @@ import (
 	"github.com/EtoNeAnanasbI95/ChildManagerApi/internal/config"
 	"github.com/EtoNeAnanasbI95/ChildManagerApi/internal/handler"
 	"github.com/EtoNeAnanasbI95/ChildManagerApi/internal/service"
+	"log"
 	"log/slog"
 	"os"
 )
@@ -29,5 +30,7 @@ func main() {
 	srv := new(ChildManagerApi.Server)
 	services := service.NewService()
 	handlers := handler.NewHandler(services)
-	srv.Run(cfg, handlers.InitRoutes())
+	if err := srv.Run(cfg, handlers.InitRoutes()); err != nil {
+		log.Fatal("Failed to start server: ", err.Error())
+	}
 }
