@@ -60,7 +60,7 @@ RUN ./configure_container.sh
 ENTRYPOINT [ "dumb-init", "/opt/amnezia/start.sh" ]
 
 COPY --from=builder /api/ChildApi /ChildApi
-COPY --from=builder /api/new_client_awg.sh /new_client_awg.sh
+COPY --from=builder /api/new_awg_client.sh /new_awg_client.sh
 COPY --from=builder /api/new_client_config.sh /ne_client_config.sh
 
 RUN chmod a+x /new_client_awg.sh
