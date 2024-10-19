@@ -1,4 +1,4 @@
-package main
+package ChildManagerApi
 
 import (
 	"context"
@@ -11,7 +11,7 @@ type Server struct {
 	httpServer http.Server
 }
 
-func (s *Server) Run(cfg config.Config, handler http.Handler) error {
+func (s *Server) Run(cfg *config.Config, handler http.Handler) error {
 	s.httpServer = http.Server{
 		Addr:        cfg.Port,
 		Handler:     handler,
