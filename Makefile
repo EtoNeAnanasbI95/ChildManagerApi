@@ -1,7 +1,7 @@
 export PORT=42076
 
 build:
-	docker-compose build child-api
+	docker-compose build --no-cache
 
 run:
-	docker-compose up -d
+	docker-compose up -d --force-recreate
