@@ -30,9 +30,6 @@ jobs:
           push: true
           tags: thesearenotpineapples95/amneziawg-go-with-api:dev
 
-      - name: Build docker-compose
-        run: make build
-
       - name: Run docker-compose
         run: make run
 
