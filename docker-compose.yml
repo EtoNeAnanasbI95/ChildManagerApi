@@ -3,7 +3,6 @@ version: '3'
 services:
   child-api:
     image: thesearenotpineapples95/amneziawg-go-with-api:dev
-    container_name: childapi
     restart: always
     privileged: true
     cap_add:
