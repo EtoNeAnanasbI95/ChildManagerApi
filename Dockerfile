@@ -67,7 +67,4 @@ RUN chmod a+x /new_awg_client.sh
 RUN chmod a+x /new_client_config.sh
 RUN chmod a+x /ChildApi
 
-EXPOSE 8000
-EXPOSE 39522
-
 CMD ["./ChildApi"]
