@@ -1,17 +1,33 @@
 package main
 
 import (
-	"fmt"
-	"time"
+	"github.com/EtoNeAnanasbI95/ChildManagerApi"
+	"github.com/EtoNeAnanasbI95/ChildManagerApi/internal/config"
+	"github.com/EtoNeAnanasbI95/ChildManagerApi/internal/handler"
+	"github.com/EtoNeAnanasbI95/ChildManagerApi/internal/service"
+	"log/slog"
+	"os"
 )
 
 func main() {
-	fmt.Println("Run api")
-	//cfg := config.MustLoadConfig()
-	//_ = cfg
+	os.Setenv("CONFIG_PATH", "./configs/config.yaml")
+	cfg := config.MustLoadConfig()
 
-	for true {
-		fmt.Println("AHAHHAAHAHHH")
-		time.Sleep(1 * time.Second)
+	opt := &slog.HandlerOptions{}
+
+	switch cfg.LogLevel {
+	case "debug":
+		opt.Level = slog.LevelDebug
+	case "info":
+		opt.Level = slog.LevelInfo
 	}
+
+	logger := slog.New(slog.NewTextHandler(os.Stdout, opt))
+	logger.Info("Run api")
+	logger.Debug("API is running")
+
+	srv := new(ChildManagerApi.Server)
+	services := service.NewService()
+	handlers := handler.NewHandler(services)
+	srv.Run(cfg, handlers.InitRoutes())
 }

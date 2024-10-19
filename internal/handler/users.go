@@ -12,6 +12,7 @@ func (h *Handler) Create(c *gin.Context) {
 		fmt.Println("Can not create new user")
 		c.AbortWithStatusJSON(http.StatusInternalServerError, "Can not create new user")
 	}
+	c.AbortWithStatusJSON(http.StatusCreated, "User created")
 }
 
 func (h *Handler) Update(c *gin.Context) {
