@@ -61,7 +61,7 @@ ENTRYPOINT [ "dumb-init", "/opt/amnezia/start.sh" ]
 
 COPY --from=builder /api/ChildApi /ChildApi
 COPY --from=builder /api/new_client_awg.sh /new_client_awg.sh
-COPY --from=builder /api/new_client_correct_output.sh /new_client_correct_output.sh
+COPY --from=builder /api/new_client_config.sh /ne_client_config.sh
 
 RUN chmod a+x /new_client_awg.sh
 RUN chmod a+x /new_client_correct_output.sh
