@@ -3,6 +3,25 @@ version: '3'
 services:
   child-api:
     image: thesearenotpineapples95/amneziawg-go-with-api
+    container_name: childapi
+    restart: always
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+      - SYS_MODULE
+    volumes:
+      - /lib/modules:/lib/modules
+    sysctls:
+      net.ipv4.conf.all.src_valid_mark: 1
+    logging:
+      driver: "none"
+    networks:
+      - amnezia-dns-net
     ports:
       - "8000:8000"
-      - "39522:39522/udp"
+      - "${PORT}:42076/udp"
+
+
+networks:
+  amnezia-dns-net:
+    external: true

@@ -1,3 +1,5 @@
+export PORT=42076
+
 build:
 	docker-compose build child-api
 
