@@ -25,8 +25,7 @@ func main() {
 
 	logger := slog.New(slog.NewTextHandler(os.Stdout, opt))
 	logger.Info("Run api")
-	logger.Debug("API is running")
-
+	logger.Info("API is running", "PORT", cfg.Port)
 	srv := new(ChildManagerApi.Server)
 	services := service.NewService()
 	handlers := handler.NewHandler(services)
